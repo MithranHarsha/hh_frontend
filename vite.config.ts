@@ -9,3 +9,4 @@ export default defineConfig({
     port: 5173,
   },
 })
+fetch(`${import.meta.env.VITE_API_URL}/api/login`)
