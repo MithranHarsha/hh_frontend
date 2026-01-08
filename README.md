@@ -89,8 +89,8 @@ src/
 │       PostgreSQL DB       │
 │  (Shipments, Vehicles)   │
 └──────────────────────────┘
-
-
+```
+----
 ⚙️ Key Features
 
 📍 Interactive map with route visualization
@@ -117,6 +117,8 @@ docker-compose down
 Clean Docker Environment (optional)
 docker system prune -f
 
+---
+
 📦 Production Build Flow
 
 Vite builds optimized static assets
@@ -127,6 +129,8 @@ Nginx serves the frontend on port 80
 
 API requests are forwarded to the backend service
 
+---
+
 🔒 Configuration Notes
 
 API base URL configured in services/api.ts
@@ -134,6 +138,8 @@ API base URL configured in services/api.ts
 Nginx configuration defined in nginx.conf
 
 Docker build instructions defined in Dockerfile
+
+---
 
 📈 Future Enhancements
 
