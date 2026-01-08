@@ -1,77 +1,72 @@
-🚚 Logistics Management & Route Optimization Dashboard
+# 🚚 Logistics Management & Route Optimization Dashboard
 
-A full-stack web application for managing shipments, vehicles, and route allocation, featuring map-based visualization, manual & automatic assignment, and a containerized production-ready setup.
+A full-stack web application for **managing shipments, vehicles, and route allocation**, featuring **map-based visualization**, **manual & automatic assignment**, and a **containerized production-ready setup**.
 
-📌 Project Summary
+---
 
-This project provides a management console to:
+## 📌 Project Summary
 
-Create and manage shipments and vehicles
+This project provides a **management console** to:
 
-Allocate shipments to vehicles
+- Create and manage **shipments**
+- Create and manage **vehicles**
+- Allocate shipments to vehicles
+- Perform **manual assignment** when automation is insufficient
+- Visualize optimized routes on an **interactive map**
+- Communicate with a backend API for persistence
+- Run seamlessly using **Docker and Nginx**
 
-Visualize routes on an interactive map
+The frontend is built using **React + TypeScript + Vite**, styled with **Tailwind CSS**, and served via **Nginx** in production.
 
-Perform manual assignment when automation is insufficient
+---
 
-Communicate with a backend API for data persistence
+## 🧱 Tech Stack
 
-Run seamlessly using Docker + Nginx
+### Frontend
+- React (TypeScript)
+- Vite
+- Tailwind CSS
+- Leaflet (Map rendering & routing)
+- Axios (API communication)
 
-The frontend is built with React + TypeScript + Vite, styled using Tailwind CSS, and served via Nginx in production.
+### Backend
+- REST API (service-based backend)
+- PostgreSQL database
 
-🧱 Tech Stack
-Frontend
+### DevOps
+- Docker
+- Docker Compose
+- Nginx (production server)
 
-React (TypeScript)
+---
 
-Vite
+## 📂 Project Structure
 
-Tailwind CSS
-
-Leaflet (Map visualization)
-
-Axios (API communication)
-
-Backend (External / Service-based)
-
-REST API (Python backend assumed)
-
-PostgreSQL (via Docker)
-
-DevOps
-
-Docker
-
-Docker Compose
-
-Nginx (Production build serving)
-
-📂 Project Structure
+```text
 src/
 ├── components/
 │   ├── AllocationButton.tsx      # Trigger shipment allocation
 │   ├── ManagementConsole.tsx     # Main admin dashboard
 │   ├── ManualAssignModal.tsx     # Manual shipment → vehicle assignment
 │   ├── MapView.tsx               # Leaflet-based map & routes
-│   ├── RouteGuard.tsx            # Protected routing
+│   ├── RouteGuard.tsx            # Protected routes
 │   ├── ShipmentForm.tsx          # Shipment creation form
 │   ├── VehicleForm.tsx           # Vehicle creation form
 │   ├── VehicleSelector.tsx       # Vehicle selection UI
 │   └── Toast.tsx                 # Global notifications
 │
 ├── services/
-│   └── api.ts                    # Centralized API calls
+│   └── api.ts                    # Centralized API handler
 │
 ├── types/
 │   └── leaflet-routing-machine.d.ts
 │
-├── App.tsx                       # App routing & layout
+├── App.tsx                       # App routing and layout
 ├── main.tsx                      # React entry point
 ├── index.css                     # Global styles
 └── vite-env.d.ts
 
-🏗️ Architecture Diagram
+
 ┌──────────────────────────┐
 │        User Browser       │
 │  (React + TypeScript UI)  │
@@ -95,53 +90,54 @@ src/
 │  (Shipments, Vehicles)   │
 └──────────────────────────┘
 
+
 ⚙️ Key Features
 
-📍 Interactive Map View with routing
+📍 Interactive map with route visualization
 
-🚛 Vehicle & Shipment Management
+🚛 Vehicle and shipment management
 
-🔄 Manual & Automated Allocation
+🔄 Manual and automated allocation
 
-🔐 Route Protection
+🔐 Route protection and guarded views
 
-🔔 Toast Notifications
+🔔 Toast-based notifications
 
-🐳 Dockerized Build & Deployment
+🐳 Dockerized build and deployment
 
-🚀 Nginx Production Serving
+🚀 Nginx-based production serving
 
 🐳 Docker Setup
-Build & Run
+Build and Run
 docker-compose up --build
 
 Stop Services
 docker-compose down
 
-Clean Build (optional)
+Clean Docker Environment (optional)
 docker system prune -f
 
 📦 Production Build Flow
 
-Vite builds static assets
+Vite builds optimized static assets
 
-Assets are copied into Nginx container
+Assets are copied into the Nginx container
 
-Nginx serves the app on port 80
+Nginx serves the frontend on port 80
 
-API calls are proxied to backend service
+API requests are forwarded to the backend service
 
-🔒 Environment & Configuration
+🔒 Configuration Notes
 
 API base URL configured in services/api.ts
 
-Nginx configuration in nginx.conf
+Nginx configuration defined in nginx.conf
 
-Docker instructions in Dockerfile
+Docker build instructions defined in Dockerfile
 
-📈 Future Improvements
+📈 Future Enhancements
 
-Authentication & Role-Based Access
+Authentication & role-based access control
 
 Automated route optimization algorithms
 
@@ -149,4 +145,4 @@ Real-time vehicle tracking
 
 CI/CD pipeline integration
 
-Map performance optimizations
+Performance optimizations for large datasets
